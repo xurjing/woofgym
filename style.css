@@ -1,0 +1,128 @@
+html, body{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+body{
+  background-color: #F5F3EB;
+  overflow:hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+   cursor: url("img/dog.png"), auto;
+}
+
+/* ✅ Start 前隐藏其他内容 */
+body.beforeStart #mainText1,
+body.beforeStart #mainText2,
+body.beforeStart #mainText3,
+body.beforeStart #image,
+body.beforeStart #bgVideo{
+  display:none;
+}
+
+@font-face {
+  font-family: 'variableFont';
+  src: url('./font/RobotoFlex.ttf') format('truetype');
+}
+
+/* Start button */
+#startBtn{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;     /* 去掉背景 */
+  border: none;         /* 去掉边框 */
+  outline: none;        /* 去掉点击蓝框 */
+  font-size: 80px;
+  font-weight: 900;
+  color: #e43d12;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* 动画 */
+}
+
+#startBtn:hover{
+  transform: translate(-50%, -50%) scale(1.08);
+}
+#mainText1, #mainText2, #mainText3{
+  z-index: 2;
+}
+/* Big poster title */
+#mainText1{
+  position: fixed;
+  font-family: 'variableFont';
+  top: 10px;
+  left: 10px;
+  font-size: 150px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color:#e43d12;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#mainText2{
+  position: fixed;
+  bottom: 10px;
+  right:10px;
+  transform: translateX(-50%);   /* ⭐关键：真正居中 */
+  text-align: left;            /* ⭐文本内容居中 */
+  font-family: 'variableFont';
+  font-size: 30px;
+  font-weight: 300;
+  opacity: .95;
+  max-width: 100vw;
+  color: #e43d12;
+}
+
+#mainText3{
+  position: fixed;
+  font-family: 'variableFont';
+  left: 20px;
+  bottom: 10px;
+  max-width: 1800px;
+  font-size: 60px;
+  font-weight: 400;
+  color: #ad55ff;
+  transition: font-weight 0.2s;
+}
+
+/* Image */
+#image{
+  position: fixed;
+  display:none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;   /* 初始大小 */
+  height: auto;
+  object-fit: contain;
+  transition: all 0.5s ease;  /* 平滑动画 */
+  z-index: 1;
+}
+
+#bgVideo{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#mainText1.variable1{
+  color:#e43d12;
+}
+
+#mainText3.variable2{
+   position: fixed;
+  font-family: 'variableFont';
+  left: 20px;
+  bottom: 10px;
+  max-width: 600px;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 0.99;
+  color: #ad55ff;
+}
